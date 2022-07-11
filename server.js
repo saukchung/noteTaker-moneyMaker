@@ -1,7 +1,6 @@
 // DEPENDENCIES
 const express = require('express');
 const path = require('path');
-const api = require('./routes/index.js');
 const notes = require("./db/db.json");
 const fs = require('fs');
 
@@ -24,7 +23,6 @@ app.use(express.static('public'));
 
 // GET route for the public page
 app.get('/notes', (req, res) => {
-  console.log(notes);
   res.sendFile(path.join(__dirname, '/public/notes.html'))
 });
 
